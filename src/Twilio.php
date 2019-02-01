@@ -3,7 +3,7 @@
 namespace Twilio;
 
 use Cake\Core\Configure;
-use Twilio\Rest\Client;
+use Twilio\Rest\Client as TwilioClient;
 
 class Twilio {
 
@@ -21,7 +21,7 @@ class Twilio {
             $this->__accountSid = $accountSid;
             $this->__authToken = $authToken;
             //$this->__instance = new Services_Twilio($this->__accountSid, $this->__authToken);
-            $this->__instance = new Twilio\Rest\Client($this->__accountSid, $this->__authToken);
+            $this->__instance = new TwilioClient($this->__accountSid, $this->__authToken);
         }
         return $this->__instance;
     }
