@@ -3,14 +3,14 @@
 namespace Twilio;
 
 use Cake\Core\Configure;
-use Services_Twilio;
+use Twilio\Rest\Client;
 
 class Twilio {
 
     private $__accountSid = null;
     private $__authToken = null;
     private $__instance = null;
-    
+
 
     public function __construct() {
         $this->getInstance(Configure::read('Twilio.sid'), Configure::read('Twilio.token'));
@@ -20,7 +20,8 @@ class Twilio {
         if (!empty($accountSid) && !empty($authToken)) {
             $this->__accountSid = $accountSid;
             $this->__authToken = $authToken;
-            $this->__instance = new Services_Twilio($this->__accountSid, $this->__authToken);
+            //$this->__instance = new Services_Twilio($this->__accountSid, $this->__authToken);
+            $this->__instance = new Twilio\Rest\Client($this->__accountSid, $this->__authToken);
         }
         return $this->__instance;
     }
@@ -35,12 +36,13 @@ class Twilio {
 
 
     public function sendSMS($from, $to, $text) {
-        $messageId = $this->__instance->account->messages->create(array(
-                'From' => $from,
-                'To' => $to,
-                'Body' => $text
+        $message = $this->__instance->messages->create(
+            $to,
+            array(
+              'from' => $from,
+              'body' => $text
             ));
-        return $messageId;
+        return $message->sid;
     }
 
     public function call($from, $to) {

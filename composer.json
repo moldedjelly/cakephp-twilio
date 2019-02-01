@@ -24,7 +24,7 @@
     "require": {
         "cakephp/cakephp": "~3.0",
         "php": ">=5.4",
-        "twilio/sdk": "~4.0",
+        "twilio/sdk": "~5.0",
         "composer/installers": "*"
     },
     "extra": {
