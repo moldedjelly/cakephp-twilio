@@ -18,7 +18,7 @@
     "repositories": [
         {
           "type": "git",
-          "url": "https://github.com/hopeseekr/twilio-php"
+          "url": "https://github.com/twilio/twilio-php"
         }
       ],
     "require": {
