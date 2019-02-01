@@ -24,7 +24,7 @@
     "require": {
         "cakephp/cakephp": "~3.0",
         "php": ">=5.4",
-        "twilio/sdk": "dev-3.13.1-create-function-fix",
+        "twilio/sdk": "~4.0",
         "composer/installers": "*"
     },
     "extra": {
