@@ -1,0 +1,38 @@
+{
+    "name": "moldedjelly/cakephp-twilio",
+    "type": "cakephp-plugin",
+    "version": "dev-master",
+    "description": "Twilio CakePHP plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "moldedjelly",
+            "homepage": "https://github.com/moldedjelly",
+            "role": "Author"
+        },
+        {
+            "name": "Mathew Johnson",
+            "email": "moldedjelly@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+          "type": "git",
+          "url": "https://github.com/hopeseekr/twilio-php"
+        }
+      ],
+    "require": {
+        "cakephp/cakephp": "~3.0",
+        "php": ">=5.4",
+        "twilio/sdk": "dev-3.13.1-create-function-fix",
+        "composer/installers": "*"
+    },
+    "extra": {
+        "installer-name": "Twilio"
+    },
+		"autoload": {
+			"psr-4": {
+				"Twilio\\": "src"
+			}
+		}
+}
